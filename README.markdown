@@ -5,8 +5,10 @@ Source code of [Objective-C for
 Rubyists](https://peepcode.com/products/objective-c-for-rubyists) made in Xcode
 4.3 and without TouchJSON dependency.
 
-Todo
-----
+Challenge
+---------
+
+    $ git checkout 68c636f
 
 - Copy products.json to your project directory
 - In test `setUp`, set `productList.url` to the path to `products.json`

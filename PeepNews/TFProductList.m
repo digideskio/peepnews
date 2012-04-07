@@ -8,13 +8,23 @@
 @implementation TFProductList
 
 @synthesize delegate;
+@synthesize url;
+
+- (id) init
+{
+  self = [super init];
+  if (self) {
+    url = [[NSBundle mainBundle] pathForResource:@"products" ofType:@"json"];
+    return self;
+  }
+  return nil;
+}
 
 - (NSArray *)products
 {
     NSError *err = nil;
-    NSURL *url = [NSURL URLWithString:@"http://peepcode.com/products.json"];
-    NSData *json = [NSData dataWithContentsOfURL:url];
-    NSArray *array = [NSJSONSerialization JSONObjectWithData:json  options:NSJSONReadingMutableContainers error:&err];
+    NSData *json = [NSData dataWithContentsOfFile:url];
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingMutableContainers error:&err];
     
     NSMutableArray *transformedProducts = [NSMutableArray array];
     for (id object in array) {
