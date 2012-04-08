@@ -10,7 +10,7 @@ Challenge
 
     $ git checkout 68c636f
 
-- Copy products.json to your project directory
+- Copy [products.json](https://peepcode.com/products.json) to your project directory
 - In test `setUp`, set `productList.url` to the path to `products.json`
 - Make an NSURL variable, plus @property and @synthesize for the url
 - Modify ProductList to set a default url in `init` and use it in `products`
